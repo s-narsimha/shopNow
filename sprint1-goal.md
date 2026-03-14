@@ -42,7 +42,21 @@ Goal: Complete the application architecture, Dockerize the application, and esta
 - Worker Nodes
 - IAM access for Jenkins
 
----
+### 🖼️ Architecture Diagram
+
+https://copilot.microsoft.com/th/id/BCO.ca55ce52-6333-4354-b585-581aa72a0c40.png
+
+![Sprint 1 Architecture](./images/sprint1-goal.png)
+
+
+### 🔧 Key Technologies
+- GitHub for source control
+- Docker for containerization
+- AWS ECR for image storage
+- Jenkins on AWS EC2 for CI/CD
+- AWS IAM for secure access
+- AWS EKS for Kubernetes deployment
+
 
 ### 🎯 Sprint 1 Goals Recap
 - ✅ Design architecture for AWS EKS deployment
@@ -50,6 +64,3 @@ Goal: Complete the application architecture, Dockerize the application, and esta
 - ✅ Set up Jenkins server with required plugins
 - ✅ Configure Jenkins IAM access to AWS resources
 - ✅ Integrate GitHub for build triggers
-
-This diagram now reflects exactly what your team needs to implement in Sprint 1 — no extra steps, no premature tooling. Would you like me to help draft the Jenkinsfile or Dockerfiles next?
-
