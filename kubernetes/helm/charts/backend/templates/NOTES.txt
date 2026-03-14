@@ -1,3 +1,0 @@
-Backend:
-- Service: {{ include "backend.fullname" . }} (type: {{ .Values.service.type }})
-- To access with port-forward: kubectl port-forward svc/{{ include "backend.fullname" . }} {{ .Values.service.port }}:{{ .Values.service.port }}
