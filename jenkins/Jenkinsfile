@@ -1,0 +1,31 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Clone Repository') {
+            steps {
+                git 'https://github.com/s-narsimha/shopNow.git'
+            }
+        }
+
+        stage('Build Backend Image') {
+            steps {
+                sh 'docker build -t shopnow-backend ./backend'
+            }
+        }
+
+        stage('Build Frontend Image') {
+            steps {
+                sh 'docker build -t shopnow-frontend ./frontend'
+            }
+        }
+
+        stage('Deploy Kubernetes Files') {
+            steps {
+                sh 'kubectl apply -f kubernetes/backend/'
+                sh 'kubectl apply -f kubernetes/frontend/'
+            }
+        }
+    }
+}

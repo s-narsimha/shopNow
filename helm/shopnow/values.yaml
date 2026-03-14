@@ -1,0 +1,9 @@
+backend:
+  image: yourdockerhub/shopnow-backend
+  tag: latest
+  replicas: 2
+
+frontend:
+  image: yourdockerhub/shopnow-frontend
+  tag: latest
+  replicas: 2
