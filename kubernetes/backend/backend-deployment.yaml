@@ -18,6 +18,10 @@ spec:
     spec:
       containers:
       - name: backend
-        image: yourdockerhub/shopnow-backend:latest
+        image: shopnow-backend:latest
+        imagePullPolicy: Never
         ports:
         - containerPort: 5000
+        env:
+        - name: MONGO_URI
+          value: mongodb://mongo-service:27017/shopnow

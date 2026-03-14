@@ -18,6 +18,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: yourdockerhub/shopnow-frontend:latest
+        image: shopnow-frontend:latest
+        imagePullPolicy: Never
         ports:
         - containerPort: 80
