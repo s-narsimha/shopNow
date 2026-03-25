@@ -12,12 +12,6 @@ pipeline {
 
     stages {
 
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/s-narsimha/shopNow'
-            }
-        }
-
         stage('Build Docker Images') {
             steps {
                 sh '''
@@ -57,6 +51,15 @@ pipeline {
                 docker push $FRONTEND_REPO:latest
                 docker push $BACKEND_REPO:latest
                 docker push $ADMIN_REPO:latest
+                '''
+            }
+        }
+
+        stage('Cleanup') {
+            steps {
+                sh '''
+                echo "Cleaning Docker..."
+                docker system prune -a -f
                 '''
             }
         }
